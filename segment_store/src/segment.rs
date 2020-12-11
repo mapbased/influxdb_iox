@@ -338,10 +338,10 @@ impl Segment {
         )
     }
 
-    /// Right now, predicates are treated conjunctive (AND) predicates. `read_group`
-    /// does not guarantee any sort order. Ordering of results should be handled
-    /// high up in the `Table` section of the segment store, where multiple
-    /// segment results may need to be merged.
+    /// Right now, predicates are treated conjunctive (AND) predicates.
+    /// `read_group` does not guarantee any sort order. Ordering of results
+    /// should be handled high up in the `Table` section of the segment
+    /// store, where multiple segment results may need to be merged.
     pub fn read_group(
         &self,
         predicates: &[Predicate<'_>],
@@ -693,8 +693,8 @@ impl Eq for GroupKey<'_> {}
 //    [foo, zoo, zoo],
 //
 // Be careful sorting group keys in result sets, because other columns
-// associated with the group keys won't be sorted unless the correct `sort` methods
-// are used on the result set implementations.
+// associated with the group keys won't be sorted unless the correct `sort`
+// methods are used on the result set implementations.
 impl Ord for GroupKey<'_> {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         // two group keys must have same length
@@ -969,8 +969,8 @@ impl std::fmt::Display for &ReadGroupResult<'_> {
     }
 }
 
-/// helper function useful for tests and benchmarks. Creates a time-range predicate
-/// in the domain `[from, to)`.
+/// helper function useful for tests and benchmarks. Creates a time-range
+/// predicate in the domain `[from, to)`.
 pub fn build_predicates_with_time(
     from: i64,
     to: i64,
