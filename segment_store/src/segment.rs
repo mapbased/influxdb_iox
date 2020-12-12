@@ -1216,7 +1216,7 @@ west,POST,304
 ",
             ),
             (
-                build_predicates_with_time(2, 6, vec![]), // all time but with explicit pred
+                build_predicates_with_time(2, 6, vec![]), // all time but without explicit pred
                 vec!["env", "region"],
                 vec![
                     ("counter", AggregateType::Sum),
